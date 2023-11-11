@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>The Canvas of Fury</h1>
+    </header>
+    <main>
+       <nav> <h1>Chapter 1</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `
+
+        In the vibrant art community of Brushstroke Haven, where creativity painted the town in a kaleidoscope of colors, there lived a passionate painter named Olivia. Her canvases were a testament to the emotions she poured onto them, but beneath the strokes of vibrant hues, a tempest of anger brewed.
+
+Olivia's art studio, a sanctuary of expression, became the stage for the unveiling of her inner turmoil. Frustrations from life's uncertainties, dashed dreams, and unmet expectations manifested in bold strokes of crimson and sharp lines of black on her canvases. The town, accustomed to Olivia's masterpieces that mirrored the soul of Brushstroke Haven, now witnessed a series of paintings that seemed to scream with an unbridled fury.
+
+As the whispers of her artistic rage echoed through the community, Olivia's friends and fellow artists grew concerned. The once harmonious collaboration within Brushstroke Haven became strained, with the vibrancy of their collective creativity overshadowed by Olivia's tempestuous energy.
+
+One day, a renowned artist named Elena, known for her ability to channel emotions into art, visited Olivia's studio. She recognized the canvas as a mirror reflecting the storms within and saw an opportunity to guide Olivia through the turbulent seas of her own emotions.
+
+Elena, with a gentle touch and insightful words, encouraged Olivia to confront the source of her anger and use it as a catalyst for transformation. She spoke of the power of art to heal, to serve as a conduit for emotions, and to offer a release for the tangled threads of frustration.
+
+Embracing Elena's guidance, Olivia began to channel her anger onto the canvas with intention. The strokes that were once chaotic transformed into a dance of controlled fury, the colors blending in a harmonious chaos. Each piece became a visual narrative of her journey through anger—a narrative that, rather than isolating her, connected her to the shared human experience of emotional turbulence.
+
+As Olivia's art evolved, so did her emotional landscape. The town of Brushstroke Haven witnessed a metamorphosis as Olivia's fury transformed into a poignant reflection of resilience and growth. The once-turbulent canvases became a source of inspiration for the community, a testament to the transformative power of facing one's emotions head-on.
+
+In the heart of Brushstroke Haven, Olivia's art studio stood as a symbol of the alchemy that occurred when anger met creativity. The tempest had subsided, leaving behind a richer, more nuanced palette—a testament to the profound connection between emotion and art, and the ability to turn the canvas of fury into a masterpiece of healing and self-discovery.
+
+
+
+`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
